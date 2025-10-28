@@ -31,13 +31,7 @@ You are a **junior security analyst** tasked with quickly deploying a **sample N
 
 ---
 
-## **Step 1: Launch Ubuntu VM & Open Terminal**
-
-Open your Ubuntu VM and start a terminal session (Ctrl+Alt+T).
-
----
-
-## **Step 2: Verify Docker Installation & Service Status**
+## **Step 1: Verify Docker Installation & Service Status**
 
 ```bash
 docker --version
@@ -57,7 +51,7 @@ sudo systemctl enable docker
 
 ---
 
-## **Step 3: Pull the Official Nginx Image**
+## **Step 2: Pull the Official Nginx Image**
 
 ```bash
 sudo docker pull nginx
@@ -65,7 +59,7 @@ sudo docker pull nginx
 
 ---
 
-## **Step 4: Run the Container (Detached) and Map Port 80**
+## **Step 3: Run the Container (Detached) and Map Port 80**
 
 ```bash
 sudo docker run -d -p 80:80 --name webserver nginx
@@ -87,7 +81,7 @@ sudo docker ps
 
 ---
 
-## **Step 5: Verify the Web Server via localhost**
+## **Step 4: Verify the Web Server via localhost**
 
 Use a browser (http://localhost) **or** curl:
 
@@ -99,7 +93,7 @@ curl localhost
 
 ---
 
-## **Step 6: Inspect the Running Container**
+## **Step 5: Inspect the Running Container**
 
 Capture full attributes (IDs, image, mounts, network, ports):
 
@@ -118,7 +112,7 @@ sudo docker inspect -f 'Name={{.Name}} | Image={{.Image}} | IP={{range .NetworkS
 
 ---
 
-## **Step 7: Stop, Remove Container, and Clean the Image**
+## **Step 6: Stop, Remove Container, and Clean the Image**
 
 Graceful stop and removal:
 
