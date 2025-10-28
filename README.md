@@ -1,4 +1,4 @@
-# **Docker Web Server Deployment Lab**
+# **Docker Web Server Deployment**
 
 [![Linux](https://img.shields.io/badge/OS-Ubuntu-blue?logo=ubuntu)](https://ubuntu.com/)
 [![Docker](https://img.shields.io/badge/Tool-Docker-blue?logo=docker)](https://www.docker.com/)
