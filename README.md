@@ -100,7 +100,7 @@ curl localhost
 
 Expected: the **default Nginx landing page HTML** (`Welcome to nginx!`).
 
-[Insert Image Here – *Screenshot: curl localhost outputs Nginx HTML*]
+<img width="761" height="515" alt="image" src="https://github.com/user-attachments/assets/94d3f2a3-7317-4ca4-8fa0-575506df903c" />
 
 ---
 
