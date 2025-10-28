@@ -151,9 +151,7 @@ sudo docker ps -a
 
 This project demonstrates the complete deployment and management lifecycle of a containerized web service using Docker on Ubuntu. The Nginx image was pulled from Docker Hub, deployed in a detached state, and bound to host port 80 for HTTP accessibility. Service functionality was verified locally through direct `curl` validation, confirming proper network mapping and container responsiveness.
 
-Operational transparency was achieved through detailed inspection of container attributes, ensuring accurate documentation of image details, port bindings, and runtime identifiers. The environment was then gracefully shut down using controlled stop and removal procedures, maintaining system integrity and minimizing residual footprint.
-
-Overall, the project exemplifies efficient containerization practices—emphasizing reliability, scalability, and adherence to proper deployment hygiene in modern Linux-based infrastructure environments.
+This was achieved through detailed inspection of container attributes, ensuring accurate documentation of image details, port bindings, and runtime identifiers. The environment was then gracefully shut down using controlled stop and removal procedures, maintaining system integrity and minimizing residual footprint.
 
 
 ---
