@@ -39,19 +39,19 @@ Open your Ubuntu VM and start a terminal session (Ctrl+Alt+T).
 
 ## **Step 2: Verify Docker Installation & Service Status**
 
-X
+```bash
 docker --version
-X
+```
 
 Expected: prints the installed Docker version.
 
 Check the daemon status; enable and start if needed:
 
-X
+```bash
 sudo systemctl status docker
 sudo systemctl start docker
 sudo systemctl enable docker
-X
+```
 
 **Outcome:** Docker service is **active (running)**.
 
@@ -59,9 +59,9 @@ X
 
 ## **Step 3: Pull the Official Nginx Image**
 
-X
+```bash
 sudo docker pull nginx
-X
+```
 
 **Result:** Downloads `library/nginx:latest` from Docker Hub.  
 *Evidence:* Include screenshot of successful layer pulls and final digest.
@@ -72,9 +72,9 @@ X
 
 ## **Step 4: Run the Container (Detached) and Map Port 80**
 
-X
+```bash
 sudo docker run -d -p 80:80 --name webserver nginx
-X
+```
 
 - `-d` runs in the background.  
 - `-p 80:80` binds **host 80 → container 80** (HTTP).  
@@ -82,9 +82,9 @@ X
 
 Confirm it’s up:
 
-X
+```bash
 sudo docker ps
-X
+```
 
 [Insert Image Here – *Screenshot: docker ps shows webserver Up with 0.0.0.0:80->80/tcp*]
 
@@ -94,9 +94,9 @@ X
 
 Use a browser (http://localhost) **or** curl:
 
-X
+```bash
 curl localhost
-X
+```
 
 Expected: the **default Nginx landing page HTML** (`Welcome to nginx!`).
 
@@ -108,15 +108,15 @@ Expected: the **default Nginx landing page HTML** (`Welcome to nginx!`).
 
 Capture full attributes (IDs, image, mounts, network, ports):
 
-X
+```bash
 sudo docker inspect webserver
-X
+```
 
 Tip: For a concise view, filter select fields (optional):
 
-X
+```bash
 sudo docker inspect -f 'Name={{.Name}} | Image={{.Image}} | IP={{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' webserver
-X
+```
 
 Take a screenshot of the key attributes for documentation.
 
@@ -126,22 +126,22 @@ Take a screenshot of the key attributes for documentation.
 
 Graceful stop and removal:
 
-X
+```bash
 sudo docker stop webserver
 sudo docker rm webserver
-X
+```
 
 (Optional) Remove the image to reclaim space:
 
-X
+```bash
 sudo docker rmi nginx
-X
+```
 
 Verify a clean slate:
 
-X
+```bash
 sudo docker ps -a
-X
+```
 
 [Insert Image Here – *Screenshot: docker ps -a shows no containers*]  
 [Insert Image Here – *Screenshot: stop/rm/rmi deletions printed to terminal*]
@@ -186,9 +186,9 @@ By completing the steps, I demonstrated the ability to **stand up a service**, *
 
 1. **Bind a Host Content Volume:**  
    Map a local directory to `/usr/share/nginx/html` to serve custom pages.  
-   X
+   ```bash
    sudo docker run -d -p 80:80 -v $(pwd)/site:/usr/share/nginx/html:ro --name webserver nginx
-   X
+   ```
 
 2. **Add Basic Logging/Artifacts:**  
    Redirect `docker inspect` and `docker ps` outputs to a `logs/` folder for audit trails.
