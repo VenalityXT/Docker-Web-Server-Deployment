@@ -63,11 +63,6 @@ sudo systemctl enable docker
 sudo docker pull nginx
 ```
 
-**Result:** Downloads `library/nginx:latest` from Docker Hub.  
-*Evidence:* Include screenshot of successful layer pulls and final digest.
-
-[Insert Image Here – *Screenshot: docker pull nginx shows layers complete and repo digest*]
-
 ---
 
 ## **Step 4: Run the Container (Detached) and Map Port 80**
@@ -75,6 +70,8 @@ sudo docker pull nginx
 ```bash
 sudo docker run -d -p 80:80 --name webserver nginx
 ```
+
+<img width="991" height="269" alt="image" src="https://github.com/user-attachments/assets/0ad5459c-3ffe-4e1a-ab34-72dac54146eb" />
 
 - `-d` runs in the background.  
 - `-p 80:80` binds **host 80 → container 80** (HTTP).  
@@ -86,7 +83,7 @@ Confirm it’s up:
 sudo docker ps
 ```
 
-[Insert Image Here – *Screenshot: docker ps shows webserver Up with 0.0.0.0:80->80/tcp*]
+<img width="1289" height="92" alt="image" src="https://github.com/user-attachments/assets/2a0ff2c6-fbb6-4ecf-8a53-7030658e14d6" />
 
 ---
 
@@ -97,8 +94,6 @@ Use a browser (http://localhost) **or** curl:
 ```bash
 curl localhost
 ```
-
-Expected: the **default Nginx landing page HTML** (`Welcome to nginx!`).
 
 <img width="761" height="515" alt="image" src="https://github.com/user-attachments/assets/94d3f2a3-7317-4ca4-8fa0-575506df903c" />
 
