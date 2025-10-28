@@ -16,7 +16,7 @@ The exercise aligns with an on-the-job scenario for a **junior security analyst*
 
 ---
 
-## **Learning Objectives**
+## **Objectives**
 
 1. Understand how to **pull and run Docker containers** from Docker Hub.  
 2. Deploy a **basic web application** and test accessibility.  
@@ -179,27 +179,5 @@ sudo docker ps -a
 
 This lab validates the core workflow for **rapid container deployment and validation** on Ubuntu using Docker.  
 By completing the steps, I demonstrated the ability to **stand up a service**, **verify network exposure**, **extract container attributes**, and **tear down cleanly**—all essential for **SOC labs**, **sandbox testing**, and **DevOps-adjacent** operations.
-
----
-
-## **Recommendations for Future Enhancements**
-
-1. **Bind a Host Content Volume:**  
-   Map a local directory to `/usr/share/nginx/html` to serve custom pages.  
-   ```bash
-   sudo docker run -d -p 80:80 -v $(pwd)/site:/usr/share/nginx/html:ro --name webserver nginx
-   ```
-
-2. **Add Basic Logging/Artifacts:**  
-   Redirect `docker inspect` and `docker ps` outputs to a `logs/` folder for audit trails.
-
-3. **Container Security Baseline:**  
-   Run as a non-root user where feasible, set read-only FS, and add resource limits (`--cpus`, `--memory`).
-
-4. **Compose File:**  
-   Convert commands into a minimal `docker-compose.yml` for repeatable spin-ups.
-
-5. **Healthcheck & Monitoring:**  
-   Add an HTTP healthcheck and collect basic metrics (e.g., `docker stats`, cAdvisor) during runtime.
 
 ---
