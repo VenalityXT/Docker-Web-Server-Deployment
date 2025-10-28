@@ -112,13 +112,14 @@ Capture full attributes (IDs, image, mounts, network, ports):
 sudo docker inspect webserver
 ```
 
-Tip: For a concise view, filter select fields (optional):
+<img width="1843" height="937" alt="image" src="https://github.com/user-attachments/assets/b2ae289f-fea4-48b8-aeff-cb483db72570" />
+*Theres a lot more than this but that would be too many screenshots to upload here)
+
+For a concise view, you can filter select fields:
 
 ```bash
 sudo docker inspect -f 'Name={{.Name}} | Image={{.Image}} | IP={{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' webserver
 ```
-
-Take a screenshot of the key attributes for documentation.
 
 ---
 
@@ -131,11 +132,13 @@ sudo docker stop webserver
 sudo docker rm webserver
 ```
 
-(Optional) Remove the image to reclaim space:
+**Bonus** Remove the image to reclaim space:
 
 ```bash
 sudo docker rmi nginx
 ```
+
+<img width="878" height="229" alt="image" src="https://github.com/user-attachments/assets/c53897b1-6d64-4ff8-b7d0-532f64f4fdbb" />
 
 Verify a clean slate:
 
@@ -143,35 +146,7 @@ Verify a clean slate:
 sudo docker ps -a
 ```
 
-[Insert Image Here – *Screenshot: docker ps -a shows no containers*]  
-[Insert Image Here – *Screenshot: stop/rm/rmi deletions printed to terminal*]
-
----
-
-## **Evidence (Screenshots to Include)**
-
-1. **Pull Completed:** `sudo docker pull nginx` with layers and final digest.  
-2. **Container Running:** `sudo docker ps` shows `webserver` **Up** with `0.0.0.0:80->80/tcp`.  
-3. **Accessibility Verified:** `curl localhost` returns Nginx default HTML.  
-4. **Cleanup Confirmed:** `sudo docker stop/rm/rmi` output and `sudo docker ps -a` empty list.
-
----
-
-## **Key Achievements**
-
-- **Containerized Web App Deployed:** Pulled and launched **Nginx** with correct **port binding** on host TCP/80.  
-- **Service Reachability Validated:** Confirmed HTTP response from `localhost` using CLI.  
-- **Operational Insight Captured:** Inspected container metadata for future infra and security analysis.  
-- **Environment Hygiene Practiced:** Performed **stop → remove → image prune** workflow to maintain a clean host.
-
----
-
-## **Skills Demonstrated**
-
-- **Docker Fundamentals:** image lifecycle, detached runs, port publishing, basic inspection.  
-- **Linux Ops:** systemd service checks, CLI diagnostics, output interpretation.  
-- **Security-Aware Workflow:** ephemeral deployment for sandboxing and controlled teardown.  
-- **Documentation Discipline:** stepwise evidence with screenshots for reproducibility.
+<img width="715" height="69" alt="image" src="https://github.com/user-attachments/assets/7a7f3541-2381-4c0e-b0af-34b564f52f83" />
 
 ---
 
