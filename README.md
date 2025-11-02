@@ -11,8 +11,7 @@
 
 ## **Project Overview**
 
-This project demonstrates how to **pull, run, verify, inspect, and clean up** a containerized web application using **Docker** on **Ubuntu**.  
-The exercise aligns with an on-the-job scenario for a **junior security analyst** testing containerized environments for sandbox analysis and documenting configurations for future vulnerability scanning labs.
+This project demonstrates how to **pull, run, verify, inspect, and clean up** a containerized web application using **Docker** on **Ubuntu**. The exercise aligns with an on-the-job scenario for a **junior security analyst** testing containerized environments for sandbox analysis and documenting configurations for future vulnerability scanning labs.
 
 ---
 
